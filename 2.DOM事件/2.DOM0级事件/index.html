@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{width: 200px;height: 60px;margin: 0 auto;padding: 0;line-height: 60px;text-align: center;color: white;}
+		.divLock{background-color: red;}
+		.divUnLock{background-color: blue;}
+	</style>
+</head>
+<body>
+	<div id="divId" class="divLock">锁定</div>
+	<script type="text/javascript">
+		//获取到DOM元素之后，在script标签中给元素设置点击事件称为DOM0级事件。
+		//通过id获取div
+		var myDiv = document.getElementById("divId");
+		//通过DOM元素设置点击事件
+		myDiv.onclick = function(){
+			//作为myDiv点击时执行的函数，在函数里面不需要写myDiv,this就代表myDiv
+			if(myDiv.innerHTML == "锁定"){
+				myDiv.innerHTML = "解锁";
+				myDiv.setAttribute("class","divUnLock");
+			}
+			else{
+				myDiv.innerHTML = "锁定";
+				myDiv.setAttribute("class","divLock");
+			}
+		};
+	</script>
+</body>
+</html>

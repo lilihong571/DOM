@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			//通过id获取input
+			var input = document.getElementById("input");
+			// 注意这里的O要大写
+			input.readOnly = true;
+		};
+	</script>
+</head>
+<body>
+	<!-- readonly只读属性 值虽然不能被修改，但是提交到后台以后，value还是能够获得到的 -->
+	<input type="text" name="text" id="input">
+	<!-- <input type="text" name="text" id="input" readonly="readonly"> -->
+</body>
+</html>

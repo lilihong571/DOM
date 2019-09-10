@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="domReady.js"></script>
+	<script type="text/javascript">
+		myReady(function(){
+			//通过id获取div
+			var myDiv = document.getElementById("divID");
+			//获取myDiv.outerHTML
+			console.log(myDiv.outerHTML);//<div id="divID"></div>
+			//设置myDiv.outerHTML
+			myDiv.outerHTML = "<p>请告诉我，还要多久！</p>"+
+								"<ul>"+
+								"<li>这是ul下面的第一个li</li>"+
+								"<li>这是ul下面的第二个li</li>"+
+								"<li>这是ul下面的第三个li</li>"+
+								"</ul>";//这样写的话，这一段html节点会替换<div id="divID"></div>
+		});
+	</script>
+</head>
+<body>
+	<div id="divID"></div>
+</body>
+</html>

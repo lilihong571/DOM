@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul id="ul">
+		<li id="li1">我是ul里面的第1个li</li>
+		<li id="li2">我是ul里面的第2个li</li>
+		<li id="li3">我是ul里面的第3个li</li>
+		<li id="li4">我是ul里面的第4个li</li>
+		<li id="li5">我是ul里面的第5个li</li>
+	</ul>
+	<ol id="ol">
+		<li>我是ol里面的第1个li</li>
+		<li>我是ol里面的第2个li</li>
+		<li>我是ol里面的第3个li</li>
+	</ol>
+	<script type="text/javascript">
+		//通过标签名获取元素数组  是一个HTMLCollection集合
+		var lis = document.getElementsByTagName("li");//document会获取body里面的所有li
+		console.log(lis);
+		console.log(lis.length);//8  数组就有长度
+		//只获取ul里面的li
+		var ul = document.getElementById("ul");
+		var lis_ul = ul.getElementsByTagName("li");
+		console.log(lis_ul);
+		console.log(lis_ul.length);//5
+	</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="../../1.添加节点/domReady.js"></script>
+	<script type="text/javascript">
+		myReady(function(){
+			//以树状方式打印文档结构
+			//获取html
+			var oHtml = document.documentElement;
+			console.log(oHtml.tagName);//HTML
+			var s = "";
+			//遍历,tagName可以用来过滤文档中的空白节点。空白节点没有tagName这个属性
+			function getChildNodes(space, parentNode){
+				if(parentNode.tagName){//这句话就代表如果这个子节点存在tagName这个属性，才执行下面的语句
+					s += space + parentNode.tagName + "<br/>";
+					//console.log("--|"+parentNode.childNodes[i].tagName)
+					//console.log(parentNode.childNodes[i].tagName);
+				}
+				var i;
+				for(i=0; i<parentNode.childNodes.length; i++){
+					if(parentNode.hasChildNodes()){//如果当前子节点还有子节点，继续遍历
+						getChildNodes(space+ "-|",parentNode.childNodes[i]);
+					}
+				}
+			}
+			getChildNodes("",document);
+			document.write(s);
+			//console.log(getChildNodes(oHtml));
+		});
+	</script>
+</head>
+<body>
+	<div id="divID">
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+</body>
+</html>

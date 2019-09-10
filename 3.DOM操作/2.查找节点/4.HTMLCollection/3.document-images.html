@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="../../1.添加节点/domReady.js"></script>
+	<script type="text/javascript">
+		myReady(function(){
+			//通过document.images获取所有img标签的Collection集合
+			var imgs = document.images;
+			console.log(imgs);
+			/*HTMLCollection(3)
+			  0: img
+			  1: img
+			  2: img
+			  length: 3
+			  __proto__: HTMLCollection*/
+		});
+	</script>
+</head>
+<body>
+	<img src="bg.png" alt="桌面背景图"/>
+	<img src="bg.png" alt="桌面背景图"/>
+	<img src="bg.png" alt="桌面背景图"/>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="../../1.添加节点/domReady.js"></script>
+	<script type="text/javascript">
+		myReady(function(){
+			//获取body节点
+			var oBody = document.getElementById("bodyID");
+			console.log(oBody.tagName);//BODY
+			//获取oBody的父节点--oBody.parentNode
+			console.log(oBody.parentNode.tagName);//HTML
+		});
+	</script>
+</head>
+<body id="bodyID">
+	<p>文本叶子节点</p>
+</body>
+</html>

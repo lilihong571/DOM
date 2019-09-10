@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			//通过querySelector获取div
+			var div = document.querySelector("#myDiv");
+			console.log(div.childNodes.length);//1
+			//分割
+			var newNode = div.firstChild.splitText(5);//从下标为5的位置开始分割
+			//原来div的文本节点
+			console.log(div.firstChild.nodeValue);//DOM探索
+			//剩下的内容
+			console.log(newNode.nodeValue);//之节点操作篇
+			console.log(div.childNodes.length);//2
+		};
+	</script>
+</head>
+<body>
+	<div id="myDiv">DOM探索之节点操作篇</div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="../../1.添加节点/domReady.js"></script>
+	<script type="text/javascript">
+		myReady(function(){
+			//通过Id获取ul
+			var ul = document.getElementById("ulId");
+			//使用第二套API遍历ul下面的元素节点--IE8及以下的浏览器不支持
+			for(var i=0,len=ul.childElementCount; i<len; i++){
+				console.log(ul.children[i].tagName);//LI
+			}
+		});
+	</script>
+</head>
+<body>
+	<ul id="ulId">
+		<li>我是ul下面的第1个li</li>
+		<li>我是ul下面的第2个li</li>
+		<li>我是ul下面的第3个li</li>
+	</ul>
+</body>
+</html>

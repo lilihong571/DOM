@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="domReady.js"></script>
+	<script type="text/javascript">
+		myReady(function(){
+			//通过id获取div元素
+			var myDiv = document.getElementById("divID");
+			//获取outerText
+			console.log(myDiv.outerText);//获取到的还是div里面的文本，和innerText类似
+			//给outerText写入值
+			myDiv.outerText = "<p>我是写入outerText里面的p标签里的文本，我的p标签应该会以字符串的形式展示</p>";//这个会替换掉整个div标签
+			console.log(myDiv.outerText);//我是div里面的文本   还能打印之前的。想不通（myDiv已经被覆盖掉了）
+		});
+	</script>
+</head>
+<body>
+	我是div外面的文本
+	<div id="divID">我是div里面的文本</div>
+</body>
+</html>

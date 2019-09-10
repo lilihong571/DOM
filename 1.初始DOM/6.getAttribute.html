@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="divId" class="divClass" data-type="hello">我是div</div>
+	<script type="text/javascript">
+		//获取div
+		var div = document.getElementById("divId");
+		//获取div上的固有属性
+		console.log(div.id);//divId	在标签行写出来的 标签自带的属性 可以通过  DOM.属性  获取
+		console.log(div.style);//CSSStyleDeclaration {alignContent: "", alignItems: "", alignSelf: "", alignmentBaseline: "", all: "", …}
+		console.log(div.align);//打印了一行空的东西
+		//获取div的class属性
+		//console.log(div.class);//undefined	class属性不能这样获取
+		console.log(div.className);//divClass  class属性的正确获取方式
+		console.log(div.getAttribute("class"));//class属性的第二种获取方式
+		//获取div上的自定义属性
+		//console.log(div.data-type);//自定义属性不能 DOM.属性  获取
+		console.log(div.getAttribute("data-type"));//hello  自定义属性的正确获取方式,记得加引号。
+		//如果div.属性。而这个属性不是div本身具有的，会打印undefined
+	</script>
+</body>
+</html>

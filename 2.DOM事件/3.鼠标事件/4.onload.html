@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		//现在script写在要获取的div上面，按照html文档的执行顺序是从上到下的
+		//通过id获取div
+		var myDiv = document.getElementById("divId");//解析到这一行的时候并没有发现id为divId的DOM元素，所以会报错
+		//现在打印是会报null，因为页面还没加载完，获取不到div
+		console.log(myDiv);
+		//而此时如果，直接设置点击事件，就会报错
+		function onClickFn(){
+			console.log("你点击了div!");
+		}
+		//已经报错
+		//4.onload.html:16 Uncaught TypeError: Cannot set property 'onclick' of null
+		myDiv.onclick = onClickFn;//这里千万不要加括号，加括号的话，你不点击，函数也能运行。
+	</script>
+</head>
+<body>
+	<div id="divId" class="divClass">onload</div><!--解析到这一行，浏览器才发现id为divId的元素-->
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#innerDivId{
+			width: 400px;
+			height: 400px;
+			background-color: red;
+			overflow: auto;/*当内容超出这个宽高的时候，会出来一个滚动条*/
+		}
+	</style>
+	<script type="text/javascript">
+		//页面加载完之后执行
+		window.onload=function(){
+			//浏览器滑动条--滑动监听
+			window.onscroll=function(){
+				console.log("我是浏览器滑动条的监听!");
+			};
+			// //页面中的div控件滑动监听
+			// //获取myDiv
+			 var myDiv = document.getElementById("innerDivId");
+			//myDiv设置监听
+			myDiv.onscroll=function(){
+				console.log("我是myDiv滑动条的监听!");
+			};
+		};
+	</script>
+</head>
+<body>
+	<div id="divId" class="divClass">
+		<div>我是div标签里面的文本元素</div><br/><br/><br/><br/>
+		<div>我是div标签里面的文本元素</div><br/><br/><br/><br/>
+		<div>我是div标签里面的文本元素</div><br/><br/><br/><br/>
+		<div>我是div标签里面的文本元素</div><br/><br/><br/><br/>
+		<div>我是div标签里面的文本元素</div><br/><br/><br/><br/>
+		<div>我是div标签里面的文本元素</div><br/><br/><br/><br/>
+		<div id="innerDivId">
+			<div>我是div内层div标签里面的文本元素</div>
+			<div>我是div内层div标签里面的文本元素</div>
+			<div>我是div内层div标签里面的文本元素</div>
+			<div>我是div内层div标签里面的文本元素</div>
+			<div>我是div内层div标签里面的文本元素</div>
+			<div>我是div内层div标签里面的文本元素</div>
+			<div>我是div内层div标签里面的文本元素</div>
+			<div>我是div内层div标签里面的文本元素</div>
+			<div>我是div内层div标签里面的文本元素</div>
+			<div>我是div内层div标签里面的文本元素</div>
+			<div>我是div内层div标签里面的文本元素</div>
+			<div>我是div内层div标签里面的文本元素</div>
+			<div>我是div内层div标签里面的文本元素</div>
+			<div>我是div内层div标签里面的文本元素</div>
+			<div>我是div内层div标签里面的文本元素</div>
+			<div>我是div内层div标签里面的文本元素</div>
+			<div>我是div内层div标签里面的文本元素</div>
+			<div>我是div内层div标签里面的文本元素</div>
+			<div>我是div内层div标签里面的文本元素</div>
+			<div>我是div内层div标签里面的文本元素</div>
+			<div>我是div内层div标签里面的文本元素</div>
+			<div>我是div内层div标签里面的文本元素</div>
+			<div>我是div内层div标签里面的文本元素</div>
+			<div>我是div内层div标签里面的文本元素</div>
+			<div>我是div内层div标签里面的文本元素</div>
+			<div>我是div内层div标签里面的文本元素</div>
+			<div>我是div内层div标签里面的文本元素</div>
+			<div>我是div内层div标签里面的文本元素</div>
+			<div>我是div内层div标签里面的文本元素</div>
+			<div>我是div内层div标签里面的文本元素</div>
+		</div>
+		<br/><br/><br/><br/>
+		<div>我是div标签里面的文本元素</div><br/><br/><br/><br/>
+		<div>我是div标签里面的文本元素</div><br/><br/><br/><br/>
+		<div>我是div标签里面的文本元素</div><br/><br/><br/><br/>
+		<div>我是div标签里面的文本元素</div><br/><br/><br/><br/>
+	</div>
+</body>
+</html>

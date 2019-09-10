@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<!-- 引入domReady -->
+	<script type="text/javascript" src="domReady.js"></script>
+	<script type="text/javascript">
+		//调用myReady函数
+		myReady(function(){
+			//document.write创建节点,会把body里面的节点覆盖掉
+			document.write("<div>我是document.write创建的div节点</div>");
+		});
+	</script>
+</head>
+<body>
+	<h1>我是body下面的子元素</h1>
+</body>
+</html>

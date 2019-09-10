@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>	</title>
+	<style type="text/css">
+		div{
+			width: 200px;height: 60px;line-height: 60px;text-align: center;
+			margin: 0 auto;padding: 0;
+			color: white;
+		}
+		.orangeClass{background-color: orange;}
+		.blueClass{background-color: blue;}
+	</style>
+</head>
+<body>
+	<div id="divId" class="orangeClass" onmouseover=onMouseOver() onmouseout="onMouseOut()">onmouseout</div>
+	<script type="text/javascript">
+		//获取div
+		var myDiv = document.getElementById("divId");
+		function onMouseOver(){
+				myDiv.innerHTML = "onmouseover";
+				myDiv.className = "blueClass";
+		}
+		function onMouseOut(){
+			myDiv.innerHTML = "onmouseout";
+				myDiv.className = "orangeClass";
+		}
+	</script>
+</body>
+</html>

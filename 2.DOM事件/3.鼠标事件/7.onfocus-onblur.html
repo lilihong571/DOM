@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			//获取input元素
+			var input = document.getElementById("inputId");
+			console.log(input);
+			//获取span元素
+			var span = document.getElementById("spanId");
+			console.log(span);
+			//获取焦点时触发事件
+			input.onfocus=function(){
+				span.innerHTML = "请输入11位数的手机号";
+			};
+			//失去焦点时触发事件
+			input.onblur=function(){
+				//判断是否为11位的数字
+				//value用于获取表单元素的值，value为字符串
+				if(!isNaN(input.value) && input.value.length == 11){
+					span.innerHTML = "<img src='image/right.png'/>";
+				}
+				else{
+					span.innerHTML = "<img src='image/error.png'/>";
+				}
+			};
+		};
+	</script>
+</head>
+<body>
+	<input type="text" name="abc" id="inputId"/>
+	<span id="spanId">请输入11位数的手机号</span>
+</body>
+</html>

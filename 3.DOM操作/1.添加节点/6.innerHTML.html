@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="domReady.js"></script>
+	<script type="text/javascript">
+		myReady(function(){
+			//通过ID获取div元素
+			var myDiv = document.getElementById("divID");
+			//创建一个放了一段Html内容的字符串
+			var str = "<div>你好，这是我用innerHTML创建的一段子节点</div>"+
+					  "<ul>"+
+					  "<li>我是ul下面的第一个li</li>"+
+					  "<li>我是ul下面的第二个li</li>"+
+					  "<li>我是ul下面的第三个li</li>"+
+					  "</ul>";
+			//将str赋值给div.innerHTML,这样就快速的创建了一段html节点
+			myDiv.innerHTML = str;
+		});
+	</script>
+</head>
+<body>
+	<div id="divID"></div>
+</body>
+</html>

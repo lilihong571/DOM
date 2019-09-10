@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<!-- 引入domReady -->
+	<script type="text/javascript" src="domReady.js"></script>
+	<script type="text/javascript">
+		myReady(function(){
+			//1.通过ID获取div节点
+			var myDiv = document.getElementById("divId");
+			//2.dcument.createElement创建元素节点,括号里面写要创建的节点的标签名，用引号引起来
+			var p = document.createElement("p");
+			//3.将p节点插入body中的div前面
+			document.body.insertBefore(p,myDiv);
+			//4.document.createTextNode创建文本节点
+			var textNode = document.createTextNode("我是p标签下面用document.createTextNode创建的TextNode节点");
+			//5.将文本节点追加在p里面
+			p.appendChild(textNode);
+			//6.创建片段节点
+			var fragment = document.createDocumentFragment();
+			//7.循环往片段文档里面赋值
+			var i;
+			for(i=0; i<3; i++){
+				//创建li标签
+				var li = document.createElement("li");
+				//创建文本节点
+				var textNode = document.createTextNode("我是文本节点"+String(i+1));
+				//往li里面追加值
+				li.appendChild(textNode);
+				//将li放入fragment中
+				fragment.appendChild(li);
+			}
+			//7.创建一个ul节点
+			var ul = document.createElement("ul");
+			//8.将ul插入在body的中间
+			document.body.insertBefore(ul,myDiv);
+			//9.将fragment放在ul里面
+			ul.appendChild(fragment);
+			//10.创建注释文本节点
+			var comment = document.createComment("你才我会在哪？");
+			//11.将注释文本插入到div的前面
+			document.body.insertBefore(comment,myDiv);
+		});
+	</script>
+</head>
+<body>
+	<div id="divId">我是body的子元素div</div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{
+			margin: 0 auto;
+			padding: 0;
+			color: white;
+			width: 200px;
+			height: 70px;
+			line-height: 70px;
+			text-align: center;
+		}
+		.divRed{
+			background-color: red;
+		}
+		.divBlue{
+			background-color: blue;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			//获取div元素
+			var myDiv = document.getElementById("divID");
+			//设置按下监听事件
+			myDiv.onmousedown=function(){
+				//改变背景
+				this.className = "divBlue";
+			};
+			myDiv.onmousemove=function(){
+				//移动监听事件
+				console.log("我是小鼠标，我正在慢慢移动！");
+			};
+			//松开监听事件
+			myDiv.onmouseup=function(){
+				this.className = "divRed";
+			};
+		};
+	</script>
+</head>
+<body>
+	<div id="divID" class="divRed">开始</div>
+</body>
+</html>

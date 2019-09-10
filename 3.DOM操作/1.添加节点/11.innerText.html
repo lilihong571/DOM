@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="domReady.js"></script>
+	<script type="text/javascript">
+		myReady(function(){
+			//通过id获取div元素
+			var myDiv = document.getElementById("divID");
+			//获取myDiv的innerText看看是些什么内容
+			console.log(myDiv.innerText);
+			/*
+			结果是输出了div包括子元素里面的所有文本内容：
+			hello!我是div下面的文本内容，不知道我会不会呗innerText输出去
+			我是ul下面的第1个li里面的文本内容
+			我是ul下面的第2个li里面的文本内容
+			我是ul下面的第3个li里面的文本内容
+			*/
+			//
+			//赋值
+			myDiv.innerText = "<p>我是p里面的文本节点</p>"+
+								"<ol>"+
+								"<li>我是ol下面的第一个li里面的文本节点</li>"+
+								"<li>我是ol下面的第二个li里面的文本节点</li>"+
+								"<li>我是ol下面的第三个li里面的文本节点</li>"+
+								"</ol>";
+								//这么给innerText赋值会把里面的<p>标签，<ol><li>标签看成文本。赋值给div的文本，并替换掉div之前有的所有子节点
+			//一些浏览器的早期版本，像firefox浏览器不支持innerText，可以用以下方法替代
+			console.log(myDiv.textContent);
+			//写入值也是一样的,p标签还是会被当成文本
+			myDiv.textContent = "<p>你好，我想飞！</p>";
+		});
+	</script>
+</head>
+<body>
+	<div id="divID">
+		hello!我是div下面的文本内容，不知道我会不会呗innerText输出去
+		<ul>
+			<li>我是ul下面的第1个li里面的文本内容</li>
+			<li>我是ul下面的第2个li里面的文本内容</li>
+			<li>我是ul下面的第3个li里面的文本内容</li>
+		</ul>
+	</div>
+</body>
+</html>

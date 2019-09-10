@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			//通过querySelector获取div
+			var div = document.querySelector(".div\\:foo");
+			//为div添加文本节点--仅仅这样添加，两文本分别是div的子节点
+			var textNode1 = document.createTextNode("我是");
+			var textNode2 = document.createTextNode("div");
+			div.appendChild(textNode1);
+			div.appendChild(textNode2);
+			console.log(div.childNodes.length);//2
+			//将两个相邻的文本子节点 合并成一个子节点
+			div.normalize();
+			console.log(div.childNodes.length);//1
+			//通过nodeValue就能获得合并以后的字符串
+			console.log(div.firstChild.nodeValue);
+		};
+	</script>
+</head>
+<body>
+	<div class="div:foo"></div>
+</body>
+</html>

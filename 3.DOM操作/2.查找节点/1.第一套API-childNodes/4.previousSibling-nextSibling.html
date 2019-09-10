@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="../../1.添加节点/domReady.js"></script>
+	<script type="text/javascript">
+		myReady(function(){
+			//获取html根节点
+			var oHtml = document.documentElement;
+			console.log(oHtml.tagName);//HTML
+			//获取head节点
+			var oHead = oHtml.firstChild;
+			console.log(oHead.tagName);//HEAD
+			//获取body节点
+			var oBody = oHead.nextSibling;
+			console.log(oBody.tagName);//BODY  需要注意的是，我去掉了head标签和body标签之间的空格，才有这个结果。要是不去掉，结果是#text
+			//通过oBody的previousSibling获取head元素
+			console.log("这是body的上一个兄弟节点："+oBody.previousSibling);//这是body的上一个兄弟节点：[object HTMLHeadElement]
+			console.log(oBody.previousSibling.tagName);//HEAD
+		});
+	</script>
+</head><body>
+	<p>文本叶子节点</p>
+</body>
+</html>

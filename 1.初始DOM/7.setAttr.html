@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="divId" class="divClass" data-type="hello">你好，我是李利红！</div>
+	<script type="text/javascript">
+		//通过id获取div
+		var div = document.getElementById("divId");
+		//获取div的id属性
+		console.log(div.id);//divId
+		//获取div的class属性
+		console.log(div.className);//divClass
+		//获取div的data-type属性
+		console.log(div.getAttribute("data-type"));//hello
+		//设置div的class属性
+		div.setAttribute("class","myDivClass");
+		console.log(div.getAttribute("class"));//myDivClass
+		//设置div没有的属性，会给div创建一个新的属性
+		div.setAttribute("data-hello","dataHello");
+		console.log(div.getAttribute("data-hello"));
+		//<div id="divId" class="myDivClass" data-type="hello" data-hello="dataHello">你好，我是李利红！</div>
+	</script>
+</body>
+</html>

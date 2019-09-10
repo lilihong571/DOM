@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="../../1.添加节点/domReady.js"></script>
+	<script type="text/javascript">
+		myReady(function(){
+			//获取id为city的select元素
+			var citys = document.getElementById("city");
+			//获取ID为age的select元素
+			var age = document.getElementById("age");
+			//通过select.options获取存放city的option的Collection集合
+			var options = city.options;
+			console.log(options);
+			/*HTMLOptionsCollection(3)
+			0: option
+			1: option
+			2: option
+			length: 3
+			selectedIndex: 0
+			__proto__: HTMLOptionsCollection*/
+		});
+	</script>
+</head>
+<body>
+	<select name="city" id="city">
+		<option value="郴州"></option>
+		<option value="娄底"></option>
+		<option value="广州"></option>
+	</select>
+	<select name="age" id="age">
+		<option value="17"></option>
+		<option value="21"></option>
+		<option value="22"></option>
+	</select>
+</body>
+</html>

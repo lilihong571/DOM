@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="../../1.添加节点/domReady.js"></script>
+	<script type="text/javascript">
+		myReady(function(){
+			//封装一个document.getElementById可以兼容IE7及以下浏览器的函数
+			function makeIEAdapterId(id){
+				//通过document.getElementById()获取id为id的元素，可能name为id的也会被获取到
+				var ele = document.getElementById(id);
+				//如果是IE浏览器
+				if(!+"\v1"){//!+"v1" == !NaN = true
+					//如果当前元素存在  并且当前元素的id===获取到的id
+					if(ele && ele.id === id){
+						return ele;
+					}else{
+						//如果当前元素的id !== id  ==> 通过document.all[id] 获取到所有的name==id或者id==id的元素
+						var eles = document.all[id];//
+						//获取到eles的长度
+						var n = eles.length, i;
+						//遍历eles
+						for(i=0; i<n; i++){
+							//如果当前元素的id === id
+							if(eles[i].id === id)
+								return eles[i];
+						}
+					}
+				}
+				//如果是其他浏览器，直接返回获取到的元素
+				return ele;
+			}
+			console.log(makeIEAdapterId("target"));//注意这里传入的是"target"
+			//通过ID获取button
+			var btn = document.getElementById("btn");
+			//给button设置点击事件
+			btn.onclick = function(){
+				// //获取id为target的元素
+				// var target = document.getElementById("target");
+				// console.log(target.tagName);//IE7只能读取出name=id的元素
+
+			};
+		});
+	</script>
+</head>
+<body>
+	<a href="#" name="target">我是链接</a>
+	<p id="target">我是p</p>
+	<input type="button" value="测试" id="btn">
+</body>
+</html>

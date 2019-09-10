@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			//通过id获取input
+			var input = document.getElementById("input");
+			//获取自定义属性data-type
+			console.log(input.getAttribute("data-type"));//hello
+			console.log(input.getAttribute("aaa"));//hello
+		};
+	</script>
+</head>
+<body>
+	<!-- 如果同意个元素中定义了两遍相同属性，后面那个属性不生效	属性的名字都为小写 -->
+	<input type="text" name="text" data-type="hello" aaa="xxx" id="input" data-type="lalala"/>
+	<!-- <input type="text" name="text" data-type="hello" aaa="xxx" id="input">   -->
+</body>
+</html>

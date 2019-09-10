@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!-- 在标签行内写的事件称为HTML事件 -->
+	<input type="button" name="click me" value="clickAlert" onclick="alert('我是HTML事件')">
+	<!-- 事件绑定函数的方法一，onclick=mouseClick()   函数要写括号   -->
+	<input type="button" name="click me" value="clickFun" onclick=mouseClick()>
+	<!-- 事件绑定函数的方法2 ,绑定匿名函数-->
+	<input type="button" name="click me" value="clickFun2" onclick=mouseClick1()>
+	<script type="text/javascript">
+		//事件函数
+		function mouseClick(){
+			console.log("你好！我是李利红！");
+		}
+		var mouseClick1 = function (){
+			console.log("你好！");
+		};
+	</script>
+</body>
+</html>

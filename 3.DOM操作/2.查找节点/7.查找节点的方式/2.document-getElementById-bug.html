@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="../../1.添加节点/domReady.js"></script>
+	<script type="text/javascript">
+		myReady(function(){
+			//通过ID获取buton
+			var btn = document.getElementById("myButton");
+			//设置按钮监听事件
+			btn.onclick=function(){
+				//获取id为target的元素，在IE7及以下的浏览器，获取的是name为target的元素
+				var target = document.getElementById("target");
+				console.log(target.tagName);
+			};
+		});
+	</script>
+</head>
+<body>
+	<a href="#" name="target">我是name为target的链接</a>
+	<p id="target">我是id为target的p标签</p>
+	<input type="button" value="测试" id="myButton"/>
+</body>
+</html>

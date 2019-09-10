@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="domReady.js"></script>
+	<script type="text/javascript">
+		//html5适用，主要解决html5提出的新元素不被IE6，IE8识别，这些新元素不能作为父节点包裹子元素。而且不能应用CSS样式
+		//让css样式应用在未知元素上，只需要执行document.createElement("html5元素名");
+		//只希望这段代码在IE浏览器下面执行，其他浏览器下执行，没有必要做浏览器的侦测，只需要写一句hack就可以了
+		if(!
+			/*@cc-on!@*/
+			0) return;//条件编译由/*@cc-on开始，@*/结束。如果是IE浏览器，会执行这条语句中间的代码。其他浏览器不会执行	IE：!!0结果为假；其他浏览器!0结果为真，直接return出去
+		(function(){
+			var e = "abbr, acticle, aside, audio, canvas, datalist, details, dialog, eventsource, figure, footer, header, hgroup, mark, menu, meter, nav, output, progress,  section, time, video".split(", ");//split能将字符串转换为数组,用逗号和空格分隔的多个html5标签
+			var i = e.length;
+			//通过while循环来创建html5标签元素
+			while(i--){
+				document.crateElement(e[i]);
+			}
+
+		})();//声明一个立即调用的函数表达式，这句话的意思是使我们的代码都在这个作用域内完成，不污染window环境
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

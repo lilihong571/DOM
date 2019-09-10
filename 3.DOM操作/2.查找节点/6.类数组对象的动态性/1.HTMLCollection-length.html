@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="../../1.添加节点/domReady.js"></script>
+	<script type="text/javascript">
+		//需求：创建div元素，个数为文本中已存在的个数
+		myReady(function(){
+			//通过div的标签名获取存放所有div的集合HTMLCollection
+			var divs = document.getElementsByTagName("div");
+			//获取divs的长度---解决由于集合动态性而陷入死循环的问题
+			var len = divs.length, i;
+			//循环创建len个div
+			//for(i=0; i<divs.length; i++){//---出现由于集合动态性而陷入死循环的问题
+			for(i=0; i<len; i++){
+				//创建节点在body里面
+				document.body.appendChild(document.createElement("div"));
+				//预期的话，应该在原来的div后面再创建3个div元素
+				//但实际上，由于divs集合具有动态性，每次进行循环的时候，会重新计算length.每当div数量发生改变时，它的length都会得到更新。所以会一直不断的创建div元素。导致页面没法响应（陷入死循环）---解决办法，预先保存divs.length
+			}
+		});
+	</script>
+</head>
+<body>
+	<div>11</div>
+	<div>12</div>
+	<div>13</div>
+</body>
+</html>

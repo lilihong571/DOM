@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			//通过querySelector获取div
+			var div = document.querySelector("#myDiv");
+			//获取ulj节点
+			var ul = document.querySelector("#myUl");
+			//创建一个新节点
+			var newNode = document.createElement("div");
+			newNode.innerHTML = "我是新节点";
+			//用新节点替换ul节点	参数：要替换的节点，被替换的节点
+			div.replaceChild(newNode,ul);
+			/*
+				<div id="myDiv">
+					<div>我是新节点</div>
+				</div>
+			*/
+		};	
+	</script>
+</head>
+<body>
+	<div id="myDiv">
+		<ul id="myUl">
+			<li>li1</li>
+			<li>li2</li>
+			<li>li3</li>
+		</ul>
+	</div>
+</body>
+</html>

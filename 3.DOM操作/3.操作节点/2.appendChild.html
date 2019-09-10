@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			//通过querySelector获取ul
+			var ul = document.querySelector("#myUl");
+			//获取ul的第一个元素节点
+			var li1 = ul.firstElementChild;
+			//打印第一个节点
+			console.log(li1);
+			//将第一个节点装载到ul的最后一个节点上
+			var returnAppendChild = ul.appendChild(li1);//最后结果li1的顺序调换到最后了
+			/*
+				<ul id="myUl">
+					<li>li2</li>
+					<li>li3</li>
+					<li>li1</li>
+				</ul>
+			*/
+			console.log(returnAppendChild);
+		};
+	</script>
+</head>
+<body>
+	<div id="myDiv">
+		<ul id="myUl">
+			<li>li1</li>
+			<li>li2</li>
+			<li>li3</li>
+		</ul>
+	</div>
+</body>
+</html>

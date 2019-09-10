@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="../../1.添加节点/domReady.js"></script>
+	<script type="text/javascript">
+		myReady(function(){
+			//通过ID获取ul元素
+			var myUl = document.getElementById("ulID");
+			//通过tagName获取HTMLCollection集合
+			var lis = myUl.getElementsByTagName("li");
+			console.log(lis);
+			/*HTMLCollection(3)
+			  0: li
+			  1: li
+			  2: li
+			  length: 3
+			  __proto__: HTMLCollection
+			*/
+			console.log(lis[0].innerHTML);//我是ul下面的第1个li
+			console.log(lis.item(1).innerHTML);//我是ul下面的第2个li
+		});
+	</script>
+</head>
+<body>
+	<ul id="ulID">
+		<li>我是ul下面的第1个li</li>
+		<li>我是ul下面的第2个li</li>
+		<li>我是ul下面的第3个li</li>
+	</ul>
+</body>
+</html>

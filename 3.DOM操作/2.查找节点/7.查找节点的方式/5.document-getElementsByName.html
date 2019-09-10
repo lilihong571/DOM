@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="../../1.添加节点/domReady.js"></script>
+	<script type="text/javascript">
+		myReady(function(){
+			//这个方法在IE6和Opera7.5浏览器下存在bug，
+			//他们会返回ID等于给定值的元素，而且他们仅仅返回Input元素与img元素
+			var hobs = document.getElementsByName("hob");
+			console.log(hobs);//获取到的是一个NodeList对象
+			/*NodeList(3)
+			0: input
+			1: input
+			2: input
+			length: 3
+			__proto__: NodeList*/
+		});
+	</script>
+</head>
+<body>
+	<form>
+		<input type="radio" value="唱歌" name="hob" id="hob">
+		<input type="radio" value="跳舞" name="hob">
+		<input type="radio" value="吃饭" name="hob">
+	</form>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			//通过id获取input元素
+			var input = document.getElementById("txt");
+			//固有属性可以直接通过	元素.属性获取
+			console.log(input.type);//text
+			console.log(input.name);//text
+			console.log(input.id);//txt
+			// title属性虽然没有显式指定值，但是它是Input的固有属性，title: ""
+			console.log(input.title);//打印出空字符串
+			//自定义属性不能通过	元素.属性获取---低版本的IE上能获取
+			console.log(input.aaa);
+		};
+	</script>
+</head>
+<body>
+	<!-- aaa属性是自定义属性，title是固有属性，没有显式赋值时使用浏览器的默认值 -->
+	<input type="text" name="text" id="txt" aaa="xxx">
+</body>
+</html>

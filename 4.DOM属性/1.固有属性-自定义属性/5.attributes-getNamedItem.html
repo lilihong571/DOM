@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			//通过ID获取input元素
+			var input = document.getElementById("input");
+			//通过attributes获取input属性集合
+			console.log(input.attributes);//返回一个NamedNodeMap对象
+			//通过getNamedItem()获取指定自定义属性的值
+			console.log(input.attributes.getNamedItem("data-type"));//data-type="hello"
+			// 通过nodeValue获取值
+			console.log(input.attributes.getNamedItem("aaa").nodeValue);//xxx
+
+			//通过getNamedItem()获取标签中显式指定的固有属性---没问题
+			console.log(input.attributes.getNamedItem("type"));//type="text"
+			console.log(input.attributes.getNamedItem("name").nodeValue);//text
+			//通过getNamedItem()获取标签中没有显示指定的固有属性的值---不可以
+			// console.log(input.attributes.getNamedItem("title"));//null
+			// console.log(input.attributes.getNamedItem("title").nodeValue);//Uncaught TypeError: Cannot read property 'nodeValue' of null
+
+			// input.attributes.getNamedItem("id")等价于input.attibutes["id"]
+			console.log("哈哈哈"+input.attributes["id"].nodeValue);//哈哈哈input
+
+			//删除属性
+			input.attributes.removeNamedItem("name"); 
+			// <input type="text" data-type="hello" aaa="xxx" id="input">
+
+			//创建属性
+			//input.attributes.setNamedItem("data-title","hahahha");//error,参数不对
+			//这里需要传入一个属性对象,创建一个属性对象
+			var attr = document.createAttribute("data-title");
+			//给属性对象的value赋值
+			attr.value = "ahahhaha";
+			input.attributes.setNamedItem(attr);//这里需要传入一个属性对象
+			//<input type="text" data-type="hello" aaa="xxx" id="input" data-title="ahahhaha">
+
+			//ele.nodeName返回元素标签的名字	--- nodeName是元素的固有属性nodeName: "INPUT"
+			//console.log(input.nodeName);//INPUT
+		};
+	</script>
+</head>
+<body>
+	<input type="text" name="text" data-type="hello" aaa="xxx" id="input">
+</body>
+</html>

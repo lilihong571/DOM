@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="domReady.js"></script>
+	<script type="text/javascript">
+		myReady(function(){
+			//通过ID获取div
+			var myDiv = document.getElementById("divID");
+			//创建一个存放script标签的字符串
+			//var str = "<script>alert('我是用innerHTML创建的script脚本');<\/script>";//chrome浏览器不会执行
+			//兼容
+			var str = "_<script defer>alert('我是用innerHTML创建的script脚本');<\/script>";
+			myDiv.innerHTML = str;//chrome浏览器不会执行
+		});
+	</script>
+</head>
+<body>
+	<div id="divID">
+		<!-- <script type="text/javascript">
+			alert("你好，我可能出不来！");
+		</script> --><!-- OK -->
+		<!-- <script>alert('我是用innerHTML创建的script脚本');</script> -->
+	</div>
+</body>
+</html>

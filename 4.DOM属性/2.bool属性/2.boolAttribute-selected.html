@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			//通过id获取select
+			var city = document.getElementById("city");
+			//获取所有option集合
+			var options = city.options;
+			//console.log(options);
+			options.item(1).selected = true;
+		};
+	</script>
+</head>
+<body>
+	<!-- 默认选中第一个 -->
+	<select name="city" id="city">
+		<option value="cz">郴州</option>
+		<option value="ld">娄底</option>
+		<option value="gz">广州</option>
+	</select>
+</body>
+</html>

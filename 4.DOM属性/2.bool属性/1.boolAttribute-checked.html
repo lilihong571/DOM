@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			//通过id获取唱歌
+			var sing = document.getElementById("inputSing");
+			//设置chenck
+			sing.checked = true;//"checked"	1 {} []	非空字符串自动类型转换
+			// checked属性不能通过removeAttribute()移除
+		};
+	</script>
+</head>
+<body>
+	<!-- checked="checked"  XHTML规范：每个属性都要有值 -->
+	唱歌<input type="checkbox" id="inputSing" name="city">
+	跳舞<input type="checkbox" id="inputDance" name="city">
+	学习<input type="checkbox" id="inputStudy" name="city">
+</body>
+</html>

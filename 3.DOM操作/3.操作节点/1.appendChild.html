@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			//通过querySelector获取div
+			var div = document.querySelector("#myDiv");
+			//在div最后一个子节点的后面添加一个新节点
+			var newDiv = document.createElement("div");
+			newDiv.innerHTML = "我是新增的节点";
+			div.appendChild(newDiv);
+			//在ul最后一个子节点的后面再创建一个子节点
+			var li4 = document.createElement("li");
+			var text = document.createTextNode("我是新增的li");
+			li4.appendChild(text);
+			document.querySelector("#myUl").appendChild(li4);
+		};
+		/*
+		<div id="myDiv">
+			<ul id="myUl">
+				<li>li1</li>
+				<li>li2</li>
+				<li>li3</li>
+			<li>我是新增的li</li></ul>
+			<div>我是新增的节点</div>
+		</div>
+	*/
+	</script>
+</head>
+<body>
+	<div id="myDiv">
+		<ul id="myUl">
+			<li>li1</li>
+			<li>li2</li>
+			<li>li3</li>
+		</ul>
+	</div>
+</body>
+</html>

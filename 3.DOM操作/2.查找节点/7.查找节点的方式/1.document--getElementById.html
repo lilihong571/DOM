@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="../../1.添加节点/domReady.js"></script>
+	<script type="text/javascript">
+		myReady(function(){
+			//通过id获取div
+			var div = document.getElementById("myDiv");
+			console.log(div.tagName);//DIV
+			//getElementById()这个方法只能通过document获取，如果通过别的获取会报错
+			var ul = div.getElementById("myUl");
+			console.log(ul);//报错 Uncaught TypeError: div.getElementById is not a function
+		});
+	</script>
+</head>
+<body>
+	<div id="myDiv">
+		<ul id="myUl">
+			<li>我是ul下面的第1个li</li>
+			<li>我是ul下面的第2个li</li>
+			<li>我是ul下面的第3个li</li>
+		</ul>
+	</div>
+</body>
+</html>

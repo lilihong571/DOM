@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="../../1.添加节点/domReady.js"></script>
+	<script type="text/javascript">
+		myReady(function(){
+			//通过document.forms获取所有的form的Collection集合
+			var forms = document.forms;
+			console.log(forms);
+			/*HTMLCollection(3)
+			  0: form#form_one
+			  1: form#form_two
+			  2: form#form_three
+			  length: 3
+			  form_one: form#form_one
+			  form_three: form#form_three
+			  form_two: form#form_two
+			  __proto__: HTMLCollection*/
+		});
+	</script>
+</head>
+<body>
+	<form id="form_one">
+		<input type="text"/>
+		<input type="text"/>
+	</form>
+	<form id="form_two">
+		<input type="text"/>
+		<input type="text"/>
+	</form>
+	<form id="form_three">
+		<input type="text"/>
+		<input type="text"/>
+	</form>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="../../1.添加节点/domReady.js"></script>
+	<script type="text/javascript">
+		myReady(function(){
+			//通过ID获取body下面的div
+			var outerDiv = document.getElementById("outerDivID");
+			//判断outerDiv是不是叶子节点
+			console.log(outerDiv.hasChildNodes());//true	有子节点，说明他不是叶子节点
+			//通过outerDiv获取p元素
+			var p = outerDiv.lastChild;
+			console.log(p);//<p id="pID"></p>
+			//判断p是不是叶子节点
+			console.log(p.hasChildNodes());//false	没有子节点，说明是叶子节点
+			//取出内层div里面的文本
+			var innerDiv = p.previousSibling;
+			console.log(innerDiv);
+			var text = innerDiv.childNodes[0];
+			console.log(text);//我是内层div
+			//判断text是否叶子节点
+			console.log(text.hasChildNodes());//false	没有子节点，说明text是叶子节点
+		});
+	</script>
+</head>
+<body>
+	<div id="outerDivID">
+		<ul>
+			<li id="li1ID"></li>
+			<li id="li2ID"></li>
+			<li id="li3ID"></li>
+		</ul>
+		<div id="innerDivID">我是内层div</div><p id="pID"></p></div>
+</body>
+</html>

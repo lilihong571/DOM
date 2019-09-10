@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="../../1.添加节点/domReady.js"></script>
+	<script type="text/javascript">
+		myReady(function(){
+			//通过ID获取div元素
+			var myUl = document.getElementById("ulID");
+			console.log(myUl.childNodes);//__proto__: NodeList
+//myUl.childNodes是一个类数组对象
+			//通过方括号调用
+			//console.log(myUl.childNodes[1]);//<li>我是ul下面的第1个li</li>
+			//通过item方法调用某个子节点
+			//console.log(myUl.childNodes.item(1));//<li>我是ul下面的第1个li</li>
+			//之所以说它是类数组对象，是因为它并不具备数组对象的一些原生的方法
+			//myUl.childNodes.push("<li>我是第4个li</li>");//Uncaught TypeError: myUl.childNodes.push is not a function
+			//将NodeList对象里面的子节点存放在数组里面
+			function makeArray(node){
+				//先创建一个数组
+				var arr = new Array();
+				//遍历nodeList
+				for(var i=0,len=node.childNodes.length; i<len; i++){
+					//将nodeList里面的节点对象放入arr中
+					arr.push(node.childNodes[i]);
+				}
+				return arr;
+			}
+			//将ul的子元素类数组对象转换成数组
+			var nodeListArr = makeArray(ulID);
+			console.log(nodeListArr);//__proto__: Array(0)
+			//往数组里面添加元素
+			nodeListArr.push("<li>我是第四个节点</li>");
+			console.log(nodeListArr);
+		});
+	</script>
+</head>
+<body>
+	<ul id="ulID">
+		<li>我是ul下面的第1个li</li>
+		<li>我是ul下面的第2个li</li>
+		<li>我是ul下面的第3个li</li>
+	</ul>
+</body>
+</html>

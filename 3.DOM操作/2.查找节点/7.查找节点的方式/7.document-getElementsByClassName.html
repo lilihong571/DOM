@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="../../1.添加节点/domReady.js"></script>
+	<script type="text/javascript">
+		myReady(function(){
+			//通过ID获取外层div
+			var outDiv = document.getElementById("outDiv");
+			//通过类名获取内层div
+			var innerDiv = outDiv.getElementsByClassName("innerDiv");
+			console.log(innerDiv);
+			/*HTMLCollection(3)
+			0: div.innerDiv.one
+			1: div.innerDiv.two
+			2: div.innerDiv.three
+			length: 3__proto__: HTMLCollection*/
+			var oneDiv = outDiv.getElementsByClassName("one");
+			console.log(oneDiv);
+			/*HTMLCollection(1)
+			  0: div.innerDiv.one
+			  length: 1
+			  __proto__: HTMLCollection*/
+			var oneTwoDiv = outDiv.getElementsByClassName("one two");
+			console.log(oneTwoDiv);//找不到className同时为one和two的元素
+			  /*HTMLCollection(0)
+			    length: 0
+			    __proto__: HTMLCollection*/
+			var innerOneDiv = outDiv.getElementsByClassName("innerDiv one");//位置颠倒也没关系
+			console.log(innerOneDiv);
+			/*HTMLCollection(1)
+			0: div.innerDiv.one
+			length: 1
+			__proto__: HTMLCollection*/
+		});
+	</script>
+</head>
+<body>
+	<div id="outDiv">
+		<div class="innerDiv one">我是div1</div>
+		<div class="innerDiv two">我是div2</div>
+		<div class="innerDiv three">我是div3</div>
+	</div>
+</body>
+</html>

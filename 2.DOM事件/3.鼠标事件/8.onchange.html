@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>	</title>
+	<script type="text/javascript">
+		//页面加载完后执行
+		window.onload=function(){
+			//获取selection元素
+			var selection = document.getElementById("selectionID");
+			//selection中事件选中改变时触发
+			selection.onchange = function(){
+				//获取当前选中的值--方法一
+				//var bgColor = this.value;
+											//this.selectedIndex为selection当中被选中的索引
+				var bgColor = this.options[this.selectedIndex].value;//也可以得到当前选中的值
+				//更换背景
+				document.body.style.backgroundColor = bgColor;
+			};
+		};
+	</script>
+</head>
+<body>		
+	<select id="selectionID">
+		<option value="white">-请选择-</option>
+		<option value="red">red</option>
+		<option value="green">green</option>
+		<option value="blue">blue</option>
+		<option value="black">black</option>
+	</select>
+</body>
+</html>

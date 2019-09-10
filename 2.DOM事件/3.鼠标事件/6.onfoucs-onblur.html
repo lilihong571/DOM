@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	</style>
+	<script type="text/javascript">
+		//页面加载完后执行
+		window.onload=function(){
+			//获取input元素
+			var input = document.getElementById("inputId");
+			//console.log(input);
+			//获取焦点时触发事件
+			input.onfocus = function(){
+				//把背景换成蓝色
+				input.style.backgroundColor = "blue";
+				//设置属性
+				input.setAttribute("placeholder","我是获取焦点时的默认文本");
+			};
+			//失去焦点时触发事件
+			input.onblur = function(){
+				//把背景变成红色
+				input.style.backgroundColor = "red";
+				input.setAttribute("placeholder","我是失去焦点时的默认文本");
+			};
+		};
+	</script>
+</head>
+<body>
+	<input type="text" id="inputId" class="inputClass"/>
+</body>
+</html>

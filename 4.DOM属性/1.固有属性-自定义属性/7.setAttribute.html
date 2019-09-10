@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			//通过id获取input
+			var input = document.getElementById("input");
+			//设置属性
+			input.setAttribute("title","setAttribute");
+			input.setAttribute("data-type","aaa");
+			// <input type="text" name="text" id="input" title="setAttribute" data-type="aaa">
+			// title: "setAttribute"
+			// 设置已显式定义的属性，就会替换掉之前的值
+		};
+	</script>
+</head>
+<body>
+	<input type="text" name="text" id="input"/>
+</body>
+</html>

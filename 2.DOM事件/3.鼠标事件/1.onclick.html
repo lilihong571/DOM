@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.redClass{
+			margin: 0 auto;padding: 0;width: 200px;height: 60px;
+			background-color: red;color: white;
+			line-height: 60px;text-align: center;
+			border-radius: 15px;font-size: 20px;
+		}
+		.blackClass{
+			margin: 0 auto;padding: 0;width: 200px;height: 60px;
+			background-color: black;color: white;
+			line-height: 60px;text-align: center;
+			border-radius: 15px;font-size: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div id="divId" class="redClass" onclick=mouseClick()>onClick</div>
+	<script type="text/javascript">
+		//获取div
+		var myDiv = document.getElementById("divId");
+		function mouseClick(){
+			//设置div的类名//实现切换按钮Bg
+			if(myDiv.className == "redClass"){
+				myDiv.className = "blackClass";
+			}else{
+				myDiv.className = "redClass";
+			}
+		}
+	</script>
+</body>
+</html>

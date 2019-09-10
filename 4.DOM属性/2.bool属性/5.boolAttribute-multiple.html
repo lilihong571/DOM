@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			//通过ID获取select
+			var select = document.getElementById("select");
+			//设置多选
+			select.multiple = true;
+			// //获取存放option的集合HTMLCollection
+			// var options = select.options;
+
+		};
+	</script>
+</head>
+<body>
+	<!-- multiple属性是设置可多选的属性，默认是单选 -->
+	<select name="select" id="select">
+	<!-- <select name="select" id="select" multiple="multiple"> -->
+		<option value="cz">郴州</option>
+		<option value="ld">娄底</option>
+		<option value="gz">广州</option>
+	</select>
+</body>
+</html>

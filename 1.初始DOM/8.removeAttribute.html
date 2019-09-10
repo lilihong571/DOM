@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="divId" class="divClass" data-type="hello">你好，我是李利红！</div>
+	<script type="text/javascript">
+		//获取div
+		var divs = document.getElementsByTagName("div");
+		//获取id属性，class属性，data-type属性
+		console.log(divs[0].id);//divId
+		console.log(divs[0].className);//divClass
+		console.log(divs[0].getAttribute("data-type"));//hello
+		//设置data-type的属性
+		divs[0].setAttribute("data-type","world");
+		console.log(divs[0].getAttribute("data-type"));//world
+		//<div id="divId" class="divClass" data-type="world">你好，我是李利红！</div>
+		//删除data-type属性
+		divs[0].removeAttribute("data-type");
+		//<div id="divId" class="divClass">你好，我是李利红！</div>
+	</script>
+</body>
+</html>

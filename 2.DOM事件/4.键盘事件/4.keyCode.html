@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			//获取div
+			var myDiv = document.getElementById("divId");
+			myDiv.style.width = "200px";
+			myDiv.style.height = "60px";
+			myDiv.style.backgroundColor = "red";
+			myDiv.style.color = "white";
+			//event代表事件的状态，如触发event对象的元素、鼠标的位置及状态 (event用于接收事件对象)
+			document.onkeydown=function(event){
+				//keyCode是作用在event事件上的
+				myDiv.innerHTML = event.keyCode;
+				console.log(event.keyCode);//大写字母的ASCII编码  a/A 65
+			};
+		};
+	</script>
+</head>
+<body>
+	<div id="divId">-请按下-</div>
+</body>
+</html>

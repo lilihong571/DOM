@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			//通过id获取div
+			var div = document.getElementById("myDiv");
+			//对于data开头的属性，用元素的dataset对象存储,动态的获得以data-开头的属性的值，现代浏览器兼容，老些的浏览器不兼容
+			//对于data-toggle直接调用div.dataset.toggle就行
+			console.log(div.dataset.toggle);//modal
+			//对于data-xxx-yyy写成驼峰形式
+			console.log(div.dataset.xxxYyy);//abc
+		};
+	</script>
+</head>
+<body>
+	<div id="myDiv" data-xxx-yyy="abc" data-toggle="modal">我是div</div>
+</body>
+</html>

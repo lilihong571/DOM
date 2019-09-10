@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul id="ul" class="ul">
+		<li>我是ul下面的第1个li</li>
+		<li><b>我是ul下面的第2个li</b></li>
+		<li>我是ul下面的第3个li</li>
+	</ul>
+	<script type="text/javascript">
+		//获取li下面的innerHTML,包括文本HTML，标签HTML
+		var ul = document.getElementById("ul");
+		var lis = ul.getElementsByTagName("li");
+		//遍历lis
+		var i,len = lis.length;
+		for(i=0; i<len; i++){
+			//获取输出
+			console.log(lis[i].innerHTML);//<b>我是ul下面的第2个li</b>
+			//赋值
+			lis[i].innerHTML += "你好！";
+			//获取输出
+			console.log(lis[i].innerHTML);//<b>我是ul下面的第2个li</b>你好！
+		}
+	</script>
+</body>
+</html>

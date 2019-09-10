@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>	innerHTML-style</title>
+	<script type="text/javascript" src="domReady.js"></script>
+	<script type="text/javascript">
+		myReady(function(){
+			//通过ID获取div
+			var myDiv = document.getElementById("divID");
+			// //创建一个存放style的字符串
+			// var str = "<style>*{background:red;}</style>"
+			//创建一个存放style的字符串--兼容IE8及以前的浏览器
+			var str = "_<style>*{background:red;}</style>"
+			//将str赋值给myDiv.innerHTML,_为了兼容以前的浏览器
+			myDiv.innerHTML = str;
+			//--兼容IE8及以前的浏览器
+			//myDiv.removeChild(myDiv.firstChild);
+		});
+	</script>
+</head>
+<body>
+	<div id="divID">
+		<!-- <style type="text/css">
+			body{
+				background-color: blue;
+			}
+		</style> --><!--ok-->
+	</div>
+</body>
+</html>

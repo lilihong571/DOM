@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		//页面中的html文档等等加载完之后，才去执行window.onload
+		window.onload = function(){
+			//获取id为divId的元素
+			var myDiv = document.getElementById("divId");
+			//打印时不会报错了，因为页面加载完后，div已经能找到了
+			console.log(myDiv);
+			//设置div的点击事件
+			var onclickFn = function(){
+				alert("你好，我是李利红");
+			};
+			myDiv.onclick = onclickFn;//千万不要写括号
+		};
+	</script>
+</head>
+<body>
+	<div id="divId" class="divClass">onload</div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="domReady.js"></script>
+	<script type="text/javascript">
+		myReady(function(){
+			//通过id获取div元素
+			var myDiv = document.getElementById("divID");
+			//创建一个字符串，使字符串的前面有两个空格
+			var str = "  我是前面有两个空格的文本！";
+			//给myDiv.innerHTML赋值，注意的是：这样赋值之后，IE6-8会把空格给移除掉，IE和Opera会将所有的标签转换为大写形式(但好像opera浏览器也是原样输出)，而其他浏览器则会原样输出
+			myDiv.innerHTML = str;
+		});
+	</script>
+</head>
+<body>
+	<div id="divID"></div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			//通过标签名查找标签名为input和div的元素的集合--查找不存在的元素，返回[]
+			var contains = document.querySelectorAll("input,div");//注意，标签名之间要加,
+			console.log(contains);
+			/*NodeList(2)
+			0: input
+			1: div#myDiv
+			length: 2
+			__proto__: NodeList*/
+			//这里返回的NodeList是StaticNodeList.不具有动态性
+		};
+	</script>
+</head>
+<body>
+	<input type="text" name="text"/>
+	<div id="myDiv">哈哈</div>
+</body>
+</html>

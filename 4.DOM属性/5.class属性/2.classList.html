@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			//通过id获取div
+			var div = document.getElementById("myDiv");
+			//定义一个类
+			var CC = {
+				addClass:function(ele,cls){
+					ele.classList.add(cls);
+				},
+				removeClass:function(ele,cls){
+					ele.classList.remove(cls);
+				},
+				containsClass:function(ele,cls){
+					return ele.classList.contains(cls);
+				},
+				toggleClass:function(ele,cls){
+					return ele.classList.toggle(cls);
+				}
+			};	
+			CC.addClass(div,"xxx");//往div里面添加一个类
+			CC.addClass(div,"vvv");//往div里面添加一个类
+			CC.removeClass(div,"aaa");//移除div的类aaa
+			console.log(CC.containsClass(div,"ccc"));//true 判断div的类属性中是否包含ccc
+			//判断是否存在fff，如果存在，删除掉，如果不存在，添加进去
+			console.log(CC.toggleClass(div,"fff"));//操作完后判断存在返回true
+			console.log(CC.toggleClass(div,"fff"));//判断不存在返回false
+		};
+	</script>
+</head>
+<body>
+	<div id="myDiv" class="aaa bbb ccc">我是div</div>
+</body>
+</html>

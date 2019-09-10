@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{
+			position: relative;width: 200px;height: 60px;
+			line-height: 60px;text-align: center;
+			background-color: red;color: white;
+		}
+		.divEnd{
+			top: 50px;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			//获取div
+			var myDiv = document.getElementById("divId");
+			//按下键盘
+			document.onkeydown=function(){
+				//更换divclass
+				myDiv.className = "divEnd";
+			};
+		};
+	</script>
+</head>
+<body>
+	<div id="divId" class="divStart">小蚂蚁</div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="../../1.添加节点/domReady.js"></script>
+	<script type="text/javascript">
+		myReady(function(){
+			//获取根节点html
+			var oHtml = document.documentElement;
+			console.log(oHtml.tagName);//HTML
+			//获取head节点
+			//var oHead = oHtml.firstElementChild;
+			//查找父节点的第i个子节点，用children属性或者说它是对象；
+			/*children与childNodes区别就是：
+				   children返回的节点集合不包括空白文本节点，他返回的全部都是元素节点
+			*/
+			var oHead = oHtml.children[0];
+			console.log(oHead.tagName);//HEAD
+			//获取body节点
+			//var oBody = oHtml.lastElementChild;
+			//var oBody = oHtml.children[1];
+			var oBody = oHead.nextElementSibling;
+			console.log(oBody.tagName);//BODY
+			var oHead1 = oBody.previousElementSibling;
+			console.log(oHead1.tagName);
+			//获取当前节点的所有子节点个数（不包含空白节点）
+			console.log(oHtml.childElementCount);//2
+		});
+	</script>
+</head>
+<body>
+	<div>我是叶子节点</div>
+</body>
+</html>

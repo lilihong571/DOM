@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			//通过id获取input
+			var input = document.getElementById("input");
+			//获取存放input所有显式指定的属性的的集合NamedNodeMap
+			console.log(input.attributes);
+			/*NamedNodeMap
+			0: type
+			1: name
+			2: data-type
+			3: xxx
+			4: id
+			length: 5
+			data-type: data-type
+			id: id
+			name: name
+			type: type
+			xxx: xxx
+			__proto__: NamedNodeMap*/
+			console.log(input.attributes[1]);//name="text"
+			console.log(input.attributes.item(3));//xxx="ccc"
+			console.log(input.attributes.length);//5
+		};
+	</script>
+</head>
+<body>
+	<input type="text" name="text" data-type="hello" xxx="ccc" id="input"/>
+</body>
+</html>

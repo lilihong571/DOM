@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="../../1.添加节点/domReady.js"></script>
+	<script type="text/javascript">
+		myReady(function(){
+			//修复 获取id为target的元素，在IE7及以下的浏览器，获取的是name为target的元素
+			/*思路：
+				在取得一个元素之后，判断一下它是通过id取得的，还是通过name取得的
+				判断的方法：看看这个元素是否显示的为ID赋了值
+				如果显示的为id赋了值，就把id传过去，返回就可以了
+				如果没有赋值，就要用document.all这个方法获取到页面上所有id或者name属性=传入的这个字符串的所有的元素---逐个比较它的id是否=传入的ID，如果是，就返回
+				*/
+				//外边传入一个id,用这个id去与已有id比较
+				function getElement(id){
+					//先通过传进来的id获取一个元素
+					var ele = document.getElementById(id);
+					//判断是在什么浏览器下面的
+					if(!+"\v1"){//IE  !"v1" = !NaN = true
+						//如果是ie浏览器	ele可能是通过name获得的，判断ele的id
+						if(ele.id === id){//100%确保ele是通过id获得的了
+							return ele;
+						}else{//如果ele.id!==id,就用document.all[id]找到所有name和id为id的元素
+							var eles = document.all(id);
+							//遍历eles这个集合
+							var n=eles.length, i;
+							for(i=0; i<n; i++){
+								//如果集合中--------------这里不理解为什么还要判断一次
+								if(eles[i].id === id){
+									return eles[i];
+								}
+							}
+						}
+					}
+					//其他浏览器，直接返回ele
+					return ele;
+				}
+				var btn = document.getElementById("myButton");
+				btn.onclick = function(){
+					console.log(getElement("target").tagName);//让 id = "target"
+				};
+		});
+	</script>
+</head>
+<body>
+	<a href="#" name="target">我是name为target的链接</a>
+	<p id="target">我是id为target的p标签</p>
+	<input type="button" value="测试" id="myButton"/>
+</body>
+</html>

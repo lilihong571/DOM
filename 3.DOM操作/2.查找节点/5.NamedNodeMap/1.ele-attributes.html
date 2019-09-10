@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="../../1.添加节点/domReady.js"></script>
+	<script type="text/javascript">
+		myReady(function(){
+			//通过ID获取div
+			var myDiv = document.getElementById("divId");
+			//获取存放myDiv的attribute的集合NamedNodeMap
+			var attributes = myDiv.attributes;
+			console.log(attributes);
+			/*amedNodeMap
+			0: id
+			1: class
+			length: 2
+			class: class
+			id: id
+			__proto__: NamedNodeMap*/
+			//给元素设置上一些自定义的属性
+			myDiv.setAttribute("data-type","hello");
+			console.log(attributes);
+			/*NamedNodeMap
+			0: id
+			1: class
+			2: data-type
+			length: 3
+			class: class
+			data-type: data-type
+			id: id
+			__proto__: NamedNodeMap*/
+		});
+	</script>
+</head>
+<body>
+	<div id="divId" class="divClass">我是div</div>
+</body>
+</html>

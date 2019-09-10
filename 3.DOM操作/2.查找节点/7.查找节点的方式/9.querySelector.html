@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			//通过ID获取div
+			var div = document.getElementById("myDiv");
+			//获取div下面的ul
+			var ul = div.querySelector("#myUl");
+			console.log(ul);
+			/*<ul id="myUl">
+			<li>li1</li>
+			<li>li2</li>
+			<li>li3</li>
+			</ul>*/
+			console.log(document.querySelector("#myUl"));//用document调用querySelector也是可以的，IE6，IE7不支持这个方法
+			//通过伪类查找
+			console.log(document.querySelector("li:last-child"));//<li>li3</li>
+			//如果用querySelector查找多个标签，只会找到第一个就返回了
+			console.log(document.querySelector("ul, li:first-child"));	
+			//如果用querySelector查找一个不存在的元素，返回空。
+			console.log(document.querySelector("span"));//null
+			//通过class查找元素
+			console.log(document.querySelector(".abc"));
+			//如果class类名里面有违规字符--需要转义
+			//console.log(document.querySelector(".abc:foo"));//Uncaught DOMException: Failed to execute 'querySelector' on 'Document': '.abc:foo' is not a valid selector.
+			//console.log(document.querySelector(".abc\:foo"));//斜杆也是违规字符
+			console.log(document.querySelector(".abc\\:foo"));//需要把斜也转义一下
+		};
+	</script>
+</head>
+<body>
+	<div id="myDiv" class="abc">
+		<ul id="myUl" class="abc:foo">
+			<li>li1</li>
+			<li>li2</li>
+			<li>li3</li>
+		</ul>
+	</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="../../1.添加节点/domReady.js"></script>
+	<script type="text/javascript">
+		myReady(function(){
+			var ul = document.getElementById("myUl");
+			//通过标签名获取存放ul下面的li的HTMLCollection集合
+			var lis = ul.getElementsByTagName("li");
+			console.log(lis);
+			/*HTMLCollection(3)
+			0: li
+			1: li
+			2: lilength: 3
+			__proto__: HTMLCollection*/
+			//给document.getElementByTagName传入"!"，在IE6~IE8下面就能获得当前范围下所有的注释节点
+			var comment = document.getElementsByTagName("!");//
+			//console.log(comment);//[object Object]{0: Object {...}, length: 1}
+			//显示注释的文本用comment[0].nodeValue
+			console.log(comment[0].nodeValue);//DOCTYPE html   在IE6~IE8下面。DOCTYPE html也被当成了注释
+			console.log(comment[1].nodeValue);// 哈哈哈哈 
+			//给document.getElementsByTagName()传入"*"就能获得页面上所有的元素
+			var allElements = document.getElementsByTagName("*");
+			//遍历
+			for(var i=0,len=allElements.length; i<len; i++){
+				console.log(allElements[i].tagName);
+			}
+		});
+	</script>
+</head>
+<body>
+	<!-- 哈哈哈哈 -->
+	<ul id="myUl">
+		<li>我是第1个li</li>
+		<li>我是第2个li</li>
+		<li>我是第3个li</li>
+	</ul>
+</body>
+</html>

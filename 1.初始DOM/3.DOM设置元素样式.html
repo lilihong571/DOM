@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="div">你好，我是李利红！</div>
+	<ul id="ul">
+		<li>这是Ul下面的第1个li</li>
+		<li>这是Ul下面的第2个li</li>
+		<li>这是Ul下面的第3个li</li>
+	</ul>
+	<script type="text/javascript">
+		//获取div
+		var div = document.getElementById("div");
+		//设置div中文本样式  
+		div.style.color = "red";
+		div.style.fontSize = "50px";//font-size这种要写成驼峰形式
+		div.style.width = "200px";
+		div.style.height = "200px";
+		div.style.backgroundColor = "gray";
+		//获取ul
+		var ul = document.getElementById("ul");
+		//获取ul下面的li,是一个HTMLCollection
+		var lis = ul.getElementsByTagName("li");
+		//注意要给lis里面的li设置样式的时候，不能直接
+		//lis.style.color = "red";//lis不是DOM元素，它是一个数组,数组没有style属性
+		//遍历数组
+		var i,len = lis.length;//这样就不用每次循环都去计算一下lis.length
+		for(i=0; i<len; i++){//i从0开始到len-1闭区间
+			lis[i].style.color = "red";
+		}
+	</script>
+</body>
+</html>

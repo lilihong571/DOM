@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="../../1.添加节点/domReady.js"></script>
+	<script type="text/javascript">
+		myReady(function(){
+			//获取html节点：document.documentElement属性可返回文档的根节点
+			var oHtml = document.documentElement;
+			//tagName属性获得元素的标签名,会自动转换成大写
+			console.log(oHtml.tagName);//打印oHtml节点的标签名   HTML
+			//获取head元素--oHTML的第一个元素
+			var oHead = oHtml.firstChild;
+			//console.log(oHead);
+			console.log(oHead.tagName);//HEAD
+			// var oHead1 = oHtml.childNodes[0];
+			// console.log(oHead1.tagName);//HEAD
+			// var oHead2 = oHtml.childNodes.item(0);
+			// console.log(oHead2.tagName);//HEAD
+
+			//获取body节点--html的最后一个节点
+			//var oBody = oHtml.lastChild;
+			var oBody = oHtml.childNodes[1];//#text   现在的标准浏览器，将节点之间的空格都视为了节点（视为文本节点）；IE8以及IE8以前的浏览器都会忽略掉这个空格（文本节点）
+			console.log(oBody);
+			var oBody1 = oHtml.lastChild;
+			console.log(oBody1.tagName);//BODY
+
+			//console.log(oHtml);//打印oHtml所代表的节点  会把整个节点打印出来，包括里面的子元素
+		});
+	</script>
+</head>
+<body>
+	<p>文本叶子节点</p>
+</body>
+</html>

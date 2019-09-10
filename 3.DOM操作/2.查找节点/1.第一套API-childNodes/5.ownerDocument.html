@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="../../1.添加节点/domReady.js"></script>
+	<script type="text/javascript">
+		myReady(function(){
+			//通过ID获取div元素
+			var myDiv = document.getElementById("divID");
+			//获取divd的父节点
+			console.log(myDiv.parentNode.tagName);//BODY
+			//获取myDiv的文档节点
+			console.log(myDiv.ownerDocument);//#document   注意：#document代表了整个html文档，从<!DOCTYPE html>开始到</html>结束都被包含了
+			//console.log(myDiv.ownerDocument.tagName);//undefined	因为文档不是标签。
+		});
+	</script>
+</head>
+<body>
+	<div id="divID">请叫我。。。</div>
+</body>
+</html>

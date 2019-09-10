@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="domReady.js"></script>
+	<script type="text/javascript">
+		myReady(function(){
+			//早期版本，textContent只支持firefox浏览器，且返回的是string类型,兼容所有浏览器的innerText获取值的方法
+			function getInnerText(element){
+				//如果element.textContent的类型是string，就用textContent
+				return (typeof element.textContent) == "string"?element.textContent:element.innerText;
+			}
+			//通过id获取div元素
+			var myDiv = document.getElementById("divID");
+			//将获取到的div元素传到getInnerText()函数里
+			console.log(getInnerText(myDiv));
+			//兼容所有浏览器写入值的方法
+			function setInnerText(element,str){
+				return (typeof element.textCotent) == "string"?(element.textCotent=str):(element.innerText=str);
+			}
+			var str = "<ul><li>我是文本</li><li>我是文本</li><li>我是文本</li></ul>";
+			setInnerText(myDiv,str);
+		});
+	</script>
+</head>
+<body>
+	<div id="divID">
+		<ul>
+			<li>我是ul下面的第1个li里面的文本节点</li>
+			<li>我是ul下面的第2个li里面的文本节点</li>
+			<li>我是ul下面的第3个li里面的文本节点</li>
+		</ul>
+	</div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			//通过querySelector获取div
+			var div = document.querySelector("#myDiv");
+			//创建一个新节点
+			var newNode = document.createElement("div");
+			newNode.innerHTML = "我是新节点div";
+			//将新节点添加在div的最后一个子节点的后面
+			//div.insertBefore(newNode,null);//没有节点做参照物，就添加作为父节点的最后一个节点
+			//添加作为父节点的第一个子节点
+			div.insertBefore(newNode,div.firstElementChild);
+			//添加作为父节点的最后一个子节点
+			div.insertBefore(newNode,div.lastElementChild);
+		};
+	</script>
+</head>
+<body>
+	<div id="myDiv">
+		<ul id="myUl">
+			<li>li1</li>
+			<li>li2</li>
+			<li>li3</li>
+		</ul>
+	</div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			//通过ID获取div
+			var div = document.getElementById("myDiv");
+			//创建一个对象
+			var CC = {
+				getClass:function(ele){
+					return ele.className.split(" ");
+				}
+			};
+			console.log(CC.getClass(div));
+			/*Array(3)
+			0: "aaa"
+			1: "bbb"
+			2: "ccc"
+			length: 3
+			__proto__: Array(0)*/
+			//未完待续。。。
+		};
+	</script>
+</head>
+<body>
+	<div id="myDiv" class="aaa bbb ccc"></div>
+</body>
+</html>

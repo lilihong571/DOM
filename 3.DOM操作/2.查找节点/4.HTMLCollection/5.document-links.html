@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="../../1.添加节点/domReady.js"></script>
+	<script type="text/javascript">
+		myReady(function(){
+			//通过document.links获取存放所有a标签的Collection集合
+			var links = document.links;
+			console.log(links);
+			/*HTMLCollection(3)
+			0: a
+			1: a
+			2: a
+			length: 3
+			__proto__: HTMLCollection*/
+		});
+	</script>
+</head>
+<body>
+	<a href="#">今天</a>
+	<a href="#">2019年</a>
+	<a href="#">9月4日</a>
+</body>
+</html>

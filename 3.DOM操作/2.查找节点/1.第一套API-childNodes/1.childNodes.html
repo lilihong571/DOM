@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="../../1.添加节点/domReady.js"></script>
+	<script type="text/javascript">
+		myReady(function(){
+			//通过id获取div
+			var myDiv = document.getElementById("divID");
+			//获取myDiv的第一个子节点
+			console.log(myDiv.childNodes[0]);//#text
+			console.log(myDiv.firstChild);//#text
+			//获取myDiv的第二个子节点
+			console.log(myDiv.childNodes.item(1));
+			/*第二个子节点打印结果：
+			<ul>
+			<li>我是div下面的第一个子节点ul下面的第1个li</li>
+			<li>我是div下面的第一个子节点ul下面的第2个li</li>
+			<li>我是div下面的第一个子节点ul下面的第3个li</li>
+		</ul>*/
+			//获取myDiv的最后一个子节点
+			console.log(myDiv.lastChild);//#text
+			console.log(myDiv.childNodes.item(8));//#text
+			// console.log("myDiv的第一个子节点是："+myDiv.childNodes[0]);//myDiv的第一个子节点是：[object Text],这样写的h话，打印出来的就不是第一个子节点的元素了。
+		});
+	</script>
+</head>
+<body>
+	<div id="divID">
+		<ul>
+			<li>我是div下面的第一个子节点ul下面的第1个li</li>
+			<li>我是div下面的第一个子节点ul下面的第2个li</li>
+			<li>我是div下面的第一个子节点ul下面的第3个li</li>
+		</ul>
+		<div>我是div下面的第二个子节点div</div>
+		<p>我是div下面的第3个子节点p</p>
+		<h1>我是div下面的第4个子节点h1</h1>
+	</div>
+</body>
+</html>

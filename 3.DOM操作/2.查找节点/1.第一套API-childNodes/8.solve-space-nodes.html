@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="../../1.添加节点/domReady.js"></script>
+	<script type="text/javascript">
+		myReady(function(){
+			//通过ID获取div
+			var myDiv = document.getElementById("divID");
+			//遍历div节点下面的子节点
+			for(var i=0,len=myDiv.childNodes.length; i<len; i++){
+				//console.log(myDiv.childNodes[i]);//会打印7个子节点：包括3个div和4个空白节点
+				if(myDiv.childNodes[i].nodeType == 1){//nodeType == 1说明不是空白节点
+					console.log(myDiv.childNodes[i]);//只会打印3个div节点
+				}
+			}
+		});
+	</script>
+</head>
+<body>
+	<div id="divID">
+		<div>我是div下面的第1个div</div>
+		<div>我是div下面的第2个div</div>
+		<div>我是div下面的第3个div</div>
+	</div>
+</body>
+</html>

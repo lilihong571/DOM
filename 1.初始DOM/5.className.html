@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="div" class="div abc">你好，我是李利红！</div>
+	<script type="text/javascript">
+		//获取div的class属性
+		var div = document.getElementById("div");
+		//获取div的class
+		console.log(div.className);//div abc
+		//给div的class赋值，会替换原来的class属性
+		div.className = "hello myDiv";
+		console.log(div.className);//hello myDiv
+	</script>
+</body>
+</html>

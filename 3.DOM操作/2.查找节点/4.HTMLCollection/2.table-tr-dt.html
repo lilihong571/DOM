@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="../../1.添加节点/domReady.js"></script>
+	<script type="text/javascript">
+		myReady(function(){
+			//通过Id获取第一个tr
+			var tr1 = document.getElementById("tr_one");
+			//通过ID获取第二个tr
+			var tr2 = document.getElementById("tr_two");
+			//通过tr.cells分别获取第一个，第二个tr下面的td集合HTMLCollection
+			var td1s = tr1.cells;//注意cells是一个属性，不是方法
+			var td2s = tr2.cells;
+			console.log(td1s);
+			/*HTMLCollection(2)
+			  0: td
+			  1: td
+			  length: 2
+			  __proto__: HTMLCollection
+			*/
+			console.log(td2s); 
+			//需要注意的是HTMLCollection集合有一个namedItem: ƒ namedItem()方法
+			//使用方法是：
+			console.log(td1s.namedItem("td_one"));
+			//<td id="td_one">我是第1个tr下面的第1个td</td>
+			//<td name="td_one">我是第1个tr下面的第2个td</td>
+			/*使用说明：先寻找id为tr_one的集合里面的元素，
+						如果有，则返回出来，
+						如果没有，寻找name为tr_one的元素，如果有返回出来，
+						如果有两个name为tr_one的元素，返回第一个
+						如果都没有返回null*/
+		});
+	</script>
+</head>
+<body>
+	<table>
+		<tr id="tr_one">
+			<!-- <td id="td_one">我是第1个tr下面的第1个td</td> -->
+			<td>我是第1个tr下面的第1个td</td>
+			<!-- <td name="td_one">我是第1个tr下面的第2个td</td> -->
+			<td>我是第1个tr下面的第2个td</td>
+		</tr>
+		<tr id="tr_two">
+			<td>我是第2个tr下面的第1个td</td>
+			<td>我是第2个tr下面的第2个td</td>
+		</tr>
+	</table>
+</body>
+</html>

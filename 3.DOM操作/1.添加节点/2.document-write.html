@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		//页面加载完后调用
+		window.onload=function(){
+			//此时如果用document.write创建节点，会导致body下面的界面被覆盖
+			document.write("<p>我是用document.write创建的p节点<p/>");
+		};
+	</script>
+</head>
+<body>
+	<h1>我是body下面的子元素</h1>
+</body>
+</html>

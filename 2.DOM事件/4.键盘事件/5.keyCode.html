@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		//页面加载完后执行
+		window.onload=function(){
+			//获取textarea文本框的内容
+			var textarea = document.getElementById("textareaId");
+			//获取span
+			var span = document.getElementById("count");
+			//键盘按压监听
+			document.onkeydown=function(){
+				//第二次获取输入框的内容
+				var textValue = textarea.value;
+				//获取输入框的长度
+				var length = textarea.value.length;
+				span.innerHTML = 30-length;
+				console.log(length);
+			};	
+		};
+	</script>
+</head>
+<body>
+	<textarea id="textareaId" placeholder="请输入内容"></textarea>
+	<br/>
+	您还可以输入<span id="count">30</span>/30个字
+</body>
+</html>
